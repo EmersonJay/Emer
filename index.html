@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emerson Jay Ricarte — Home</title>
+<meta name="description" content="Home page of Emerson Jay Ricarte's course requirement site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.hero{ padding: 72px 0 48px; border-bottom: 1px solid var(--line); }
+.hero .eyebrow{ text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; }
+.hero h1{ font-size: clamp(2.2rem, 6vw, 3.4rem); font-weight: 700; line-height: 1.1; max-width: 16ch; }
+.hero .intro{ margin-top: 18px; max-width: 52ch; color: var(--ink-soft); font-size: 1.08rem; }
+.hero-facts{ display: flex; flex-wrap: wrap; gap: 14px 48px; margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); }
+.hero-facts .label{ font-size: 0.8rem; color: var(--ink-soft); }
+.hero-facts .value{ font-weight: 600; color: var(--ink); }
+.stats{ display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 36px; background: var(--paper-deep); border: 2px solid var(--rust); position: relative; }
+.stats::before{ content: ""; position: absolute; inset: 6px; border: 1px solid var(--gold); pointer-events: none; }
+.stat{ padding: 26px 12px; text-align: center; }
+.stat + .stat{ border-left: 1px solid var(--line); }
+.stat .num{ display: block; font-family: 'Fraunces', serif; font-size: 2.3rem; font-weight: 700; color: var(--maroon); line-height: 1.1; }
+.stat .cap{ display: block; margin-top: 4px; font-size: 0.85rem; color: var(--ink-soft); }
+.explore{ padding: 56px 0 24px; }
+.explore h2{ font-size: 1.6rem; }
+.explore .lead{ margin: 8px 0 26px; color: var(--ink-soft); }
+.card-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.card{ display: block; padding: 20px 20px 22px; text-decoration: none; background: rgba(217,164,65,0.10); border-left: 3px solid var(--gold); transition: transform .15s ease, background .15s ease; }
+.card:hover{ transform: translateY(-2px); background: rgba(217,164,65,0.20); }
+.card h3{ font-size: 1.1rem; margin-bottom: 6px; }
+.card p{ margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+.topics{ padding: 24px 0 64px; }
+.topics h2{ font-size: 1.3rem; margin-bottom: 16px; }
+.topic-list{ list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; counter-reset: topic; }
+.topic-list li{ counter-increment: topic; }
+.topic-list a{ display: flex; align-items: center; gap: 14px; padding: 12px 16px; text-decoration: none; color: var(--ink); border: 1px solid var(--line); background: var(--paper); }
+.topic-list a::before{ content: counter(topic, decimal-leading-zero); font-family: 'Fraunces', serif; font-weight: 600; color: var(--rust); }
+.topic-list a:hover{ border-color: var(--rust); color: var(--rust-deep); }
+@media (max-width: 560px){ .hero{ padding-top: 44px; } .stat .num{ font-size: 1.8rem; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="about-me.html"><span class="brand-logo">EJR</span><span class="brand-name">Emerson Jay Ricarte</span></a>
+      <nav class="site-nav"><ul><li class="current"><a href="index.html">Home</a></li>
+        <li class=""><a href="digital-literacy-seminar.html">Digital Literacy Seminar</a></li>
+        <li class=""><a href="about-me.html">About me</a></li>
+        <li class="has-sub "><a href="list-of-outputs.html">List of Outputs</a><ul class="sub-nav">
+          <li class=""><a href="emerging-trends-and-innovations-in-it.html">Emerging Trends and Innovations in IT</a></li>
+          <li class=""><a href="cyber-security-and-ethical-issues.html">Cyber Security and Ethical Issues</a></li>
+          <li class=""><a href="data-analytics-and-artificial-intelligence.html">Data Analytics and Artificial Intelligence</a></li>
+          <li class=""><a href="cloud-computing-devops-and-modernization.html">Cloud Computing, DevOps, and Modernization</a></li>
+          <li class=""><a href="tech-entrepreneurship-and-startups-in-the-it-industry.html">Tech Entrepreneurship and Startups in the IT Industry</a></li></ul></li></ul></nav>
+    </div>
+  </header>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Welcome</div>
+    <h1>Hi, I'm Emerson Jay Ricarte</h1>
+    <p class="intro">A fourth-year IT student. This site collects my seminar reports, certificates, and proof of attendance for Seminar and Tours.</p>
+    <div class="hero-facts">
+      <div><div class="label">Program &amp; Section</div><div class="value">BSIT-4B</div></div>
+      <div><div class="label">Course</div><div class="value">Seminar and Tours</div></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="num">5</span><span class="cap">Webinar Outputs</span></div>
+      <div class="stat"><span class="num">5</span><span class="cap">Topic Areas</span></div>
+      <div class="stat"><span class="num">4B</span><span class="cap">Section</span></div>
+    </div>
+  </section>
+
+  <section class="explore">
+    <h2>Explore</h2>
+    <p class="lead">Jump to any part of the site.</p>
+    <div class="card-grid">
+      <a class="card" href="digital-literacy-seminar.html"><h3>Digital Literacy Seminar</h3><p>Narrative report and photo documentation.</p></a>
+      <a class="card" href="about-me.html"><h3>About me</h3><p>A short introduction and background.</p></a>
+      <a class="card" href="list-of-outputs.html"><h3>List of Outputs</h3><p>Seminar proofs and narrative reports for each topic area.</p></a>
+    </div>
+  </section>
+
+  <section class="topics">
+    <h2>Seminar topic areas</h2>
+    <ul class="topic-list">
+      <li><a href="emerging-trends-and-innovations-in-it.html">Emerging Trends and Innovations in IT</a></li>
+      <li><a href="cyber-security-and-ethical-issues.html">Cyber Security and Ethical Issues</a></li>
+      <li><a href="data-analytics-and-artificial-intelligence.html">Data Analytics and Artificial Intelligence</a></li>
+      <li><a href="cloud-computing-devops-and-modernization.html">Cloud Computing, DevOps, and Modernization</a></li>
+      <li><a href="tech-entrepreneurship-and-startups-in-the-it-industry.html">Tech Entrepreneurship and Startups in the IT Industry</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Emerson Jay Ricarte</span>
+    <span>BSIT-4B</span>
+  </footer>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>

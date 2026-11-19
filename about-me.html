@@ -10,15 +10,45 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-.about-card{ margin: 40px 0 24px; padding: 8px 28px; background: var(--paper-deep); border: 2px solid var(--rust); position: relative; }
-.about-card::before{ content: ""; position: absolute; inset: 6px; border: 1px solid var(--gold); pointer-events: none; }
-.about-list{ margin: 0; position: relative; }
-.about-row{ display: grid; grid-template-columns: 170px 1fr; gap: 6px 24px; padding: 18px 0; align-items: baseline; }
-.about-row + .about-row{ border-top: 1px solid var(--line); }
-.about-row dt{ font-size: 0.85rem; color: var(--rust-deep); letter-spacing: 0.02em; }
-.about-row dd{ margin: 0; font-weight: 500; color: var(--ink); overflow-wrap: anywhere; }
-.about-row dd a{ color: var(--rust-deep); }
-@media (max-width: 560px){ .about-card{ padding: 4px 18px; } .about-row{ grid-template-columns: 1fr; gap: 2px; } }
+.about-intro{ display:grid; grid-template-columns: 240px 1fr; gap: 36px; margin: 40px 0 8px; align-items:start; }
+.about-photo{ padding: 10px; background: var(--paper-deep); border: 1px solid var(--line); border-radius: 16px; }
+.about-photo img{ display:block; width:100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 10px; }
+.about-bio .lead{ margin: 0; color: var(--ink-soft); font-size: 1.05rem; }
+.about-bio .lead strong{ font-family:'Fraunces',serif; color: var(--maroon); }
+.about-quote{ margin: 20px 0 0; padding-left: 18px; border-left: 3px solid var(--rust); font-family:'Fraunces',serif; font-style: italic; color: var(--maroon); }
+
+.info-card{ margin: 36px 0 0; padding: 12px 28px; background: var(--paper-deep); border: 1px solid var(--line); border-radius: 16px; }
+.info-list{ margin: 0; }
+.info-row{ display:grid; grid-template-columns: 150px 1fr; gap: 6px 24px; padding: 12px 0; align-items: baseline; }
+.info-row dt{ font-size: 0.9rem; font-weight: 600; color: var(--ink-soft); }
+.info-row dd{ margin: 0; font-family:'Fraunces',serif; font-size: 1.08rem; color: var(--ink); overflow-wrap: anywhere; }
+
+.about-section{ padding: 40px 0 0; }
+.about-section h2{ font-size: 1.5rem; margin-bottom: 16px; }
+
+.skill-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+.skill-card{ display:flex; align-items:center; gap: 14px; padding: 22px 20px; background: var(--paper-deep); border: 1px solid var(--line); border-left: 4px solid var(--rust); border-radius: 14px; font-weight: 600; color: var(--ink); }
+.skill-card svg{ width: 24px; height: 24px; flex-shrink: 0; stroke: var(--rust); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.contact-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.contact-card{ display:flex; align-items:center; gap: 16px; padding: 18px 20px; background: var(--paper-deep); border: 1px solid var(--line); border-radius: 14px; text-decoration: none; color: var(--ink); transition: border-color .15s ease, transform .15s ease; }
+.contact-card:hover{ border-color: var(--rust); transform: translateY(-2px); }
+.contact-icon{ width: 52px; height: 52px; border-radius: 50%; background: var(--rust); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.contact-icon svg{ width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.contact-text{ min-width: 0; }
+.contact-text .label{ display:block; font-size: 0.82rem; color: var(--ink-soft); }
+.contact-text .value{ display:block; font-family:'Fraunces',serif; font-weight: 600; font-size: 1.05rem; overflow-wrap: anywhere; }
+
+.gallery{ display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+.gallery figure{ margin:0; padding: 8px; background: var(--paper-deep); border: 1px solid var(--line); border-radius: 14px; }
+.gallery img{ display:block; width:100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 8px; background: var(--paper); }
+
+@media (max-width: 640px){
+  .about-intro{ grid-template-columns: 1fr; }
+  .about-photo{ max-width: 240px; }
+  .info-card{ padding: 8px 18px; }
+  .info-row{ grid-template-columns: 1fr; gap: 2px; }
+}
 </style>
 </head>
 <body>
@@ -26,7 +56,7 @@
 <header class="site-header">
     <div class="site-header-inner">
       <a class="brand" href="about-me.html"><span class="brand-logo"><img src="profile.jpg" alt="Emerson Jay Ricarte"></span><span class="brand-name">Emerson Jay Ricarte</span></a>
-      <nav class="site-nav"><ul><li class=""><a href="index.html">Home</a></li><li class=""><a href="digital-literacy-seminar.html">Digital Literacy Seminar</a></li><li class="current"><a href="about-me.html">About me</a></li><li class="has-sub "><a href="list-of-outputs.html">List of Outputs</a><ul class="sub-nav"><li class=""><a href="emerging-trends-and-innovations-in-it.html">Emerging Trends and Innovations in IT</a></li><li class=""><a href="cyber-security-and-ethical-issues.html">Cyber Security and Ethical Issues</a></li><li class=""><a href="data-analytics-and-artificial-intelligence.html">Data Analytics and Artificial Intelligence</a></li><li class=""><a href="cloud-computing-devops-and-modernization.html">Cloud Computing, DevOps, and Modernization</a></li><li class=""><a href="tech-entrepreneurship-and-startups-in-the-it-industry.html">Tech Entrepreneurship and Startups in the IT Industry</a></li></ul></li></ul></nav>
+      <nav class="site-nav"><ul><li class=""><a href="index.html">Home</a></li><li class=""><a href="future-ready-it-seminar.html">Future Ready IT Seminar</a></li><li class="current"><a href="about-me.html">About me</a></li><li class="has-sub "><a href="list-of-outputs.html">List of Outputs</a><ul class="sub-nav"><li class=""><a href="emerging-trends-and-innovations-in-it.html">Emerging Trends and Innovations in IT</a></li><li class=""><a href="cyber-security-and-ethical-issues.html">Cyber Security and Ethical Issues</a></li><li class=""><a href="data-analytics-and-artificial-intelligence.html">Data Analytics and Artificial Intelligence</a></li><li class=""><a href="cloud-computing-devops-and-modernization.html">Cloud Computing, DevOps, and Modernization</a></li><li class=""><a href="tech-entrepreneurship-and-startups-in-the-it-industry.html">Tech Entrepreneurship and Startups in the IT Industry</a></li></ul></li></ul></nav>
     </div>
   </header>
 
@@ -36,16 +66,56 @@
     <h1>About me</h1>
   </section>
 
-  <div class="about-card">
-    <dl class="about-list">
-      <div class="about-row"><dt>Name</dt><dd>Emerson Jay Ricarte</dd></div>
-      <div class="about-row"><dt>Date of Birth</dt><dd>July 27, 2004</dd></div>
-      <div class="about-row"><dt>Address</dt><dd>Danlog, San Jose, Camarines Sur</dd></div>
-      <div class="about-row"><dt>Organization</dt><dd>Partido State University Symphonic Band</dd></div>
-      <div class="about-row"><dt>Email</dt><dd><a href="mailto:playsejay@gmail.com">playsejay@gmail.com</a></dd></div>
-      <div class="about-row"><dt>Contact Number</dt><dd><a href="tel:+639318810122">09318810122</a></dd></div>
+  <section class="about-intro">
+    <div class="about-photo"><img src="profile.jpg" alt="Emerson Jay Ricarte"></div>
+    <div class="about-bio">
+      <p class="lead"><strong>Emerson Jay Ricarte</strong> — A fourth-year BSIT student at Partido State University and a proud member of the PSU Symphonic Band. I enjoy learning new technologies and finding ways to apply them, while keeping a balance with music. This site is a collection of the seminars I attended for Seminar and Tours, and a record of how much I have grown along the way.</p>
+      <p class="about-quote">"To see is to believe."</p>
+    </div>
+  </section>
+
+  <div class="info-card">
+    <dl class="info-list">
+      <div class="info-row"><dt>Name</dt><dd>Emerson Jay Ricarte</dd></div>
+      <div class="info-row"><dt>Program</dt><dd>BSIT</dd></div>
+      <div class="info-row"><dt>School</dt><dd>Partido State University</dd></div>
+      <div class="info-row"><dt>Date of Birth</dt><dd>July 27, 2004</dd></div>
+      <div class="info-row"><dt>Address</dt><dd>Danlog, San Jose, Camarines Sur</dd></div>
+      <div class="info-row"><dt>Organization</dt><dd>Partido State University Symphonic Band</dd></div>
     </dl>
   </div>
+
+  <section class="about-section">
+    <h2>Skills</h2>
+    <div class="skill-grid">
+      <div class="skill-card"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/><rect x="2" y="6" width="20" height="12" rx="4"/></svg>Game Developer</div>
+      <div class="skill-card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Music</div>
+      <div class="skill-card"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Programming</div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2>Contact me</h2>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:playsejay@gmail.com">
+        <span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+        <span class="contact-text"><span class="label">Email</span><span class="value">playsejay@gmail.com</span></span>
+      </a>
+      <a class="contact-card" href="tel:+639318810122">
+        <span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <span class="contact-text"><span class="label">Mobile</span><span class="value">0931 881 0122</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="about-section" style="padding-bottom:48px;">
+    <h2>Beyond the Classroom</h2>
+    <div class="gallery">
+      <figure><img src="band-1.jpg" alt="Emerson in the PSU Symphonic Band uniform on the street"></figure>
+      <figure><img src="band-2.jpg" alt="Close-up of Emerson in the band uniform and plumed hat"></figure>
+      <figure><img src="band-3.jpg" alt="Emerson in the band cape, seen from behind"></figure>
+    </div>
+  </section>
 
   <footer>
     <span>Emerson Jay Ricarte</span>

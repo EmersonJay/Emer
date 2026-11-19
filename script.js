@@ -1,3 +1,39 @@
+// Dark mode: the site always opens in light mode. If the visitor switches to
+// dark, that choice is kept while they browse the pages in the same session.
+(function () {
+  var root = document.documentElement;
+  var saved = null;
+  try { saved = sessionStorage.getItem('theme'); } catch (e) {}
+  var theme = saved === 'dark' ? 'dark' : 'light';
+  root.setAttribute('data-theme', theme);
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var inner = document.querySelector('.site-header-inner');
+    if (!inner) return;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'theme-toggle';
+
+    function render() {
+      var isDark = root.getAttribute('data-theme') === 'dark';
+      btn.textContent = isDark ? '\u2600' : '\u263E';
+      btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      btn.title = isDark ? 'Light mode' : 'Dark mode';
+    }
+
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { sessionStorage.setItem('theme', next); } catch (e) {}
+      render();
+    });
+
+    render();
+    inner.appendChild(btn);
+  });
+})();
+
 // Site nav: makes the "List of Outputs" dropdown tappable on touch/mobile,
 // where CSS :hover / :focus-within alone isn't reliable.
 document.addEventListener('DOMContentLoaded', function () {
@@ -41,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Click-to-zoom lightbox for certificate and proof images.
 document.addEventListener('DOMContentLoaded', function () {
-  var images = document.querySelectorAll('.wrap img');
+  var images = Array.prototype.filter.call(document.querySelectorAll('.wrap img'), function (img) { return !img.closest('a'); });
   if (!images.length) return;
 
   images.forEach(function (img) {

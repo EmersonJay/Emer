@@ -9,13 +9,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+.output-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; padding: 36px 0 64px; }
+.output-card{ display:flex; flex-direction:column; background: var(--paper-deep); border: 1px solid var(--line); border-radius: 16px; overflow:hidden; text-decoration:none; color: var(--ink); transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease; }
+.output-card:hover{ transform: translateY(-3px); border-color: var(--rust); box-shadow: 0 10px 24px rgba(18,38,58,0.12); }
+.output-thumb{ aspect-ratio: 16/10; background: #fff; overflow:hidden; border-bottom: 1px solid var(--line); }
+.output-thumb img{ display:block; width:100%; height:100%; object-fit: cover; }
+.output-body{ padding: 20px 22px 24px; display:flex; flex-direction:column; gap: 8px; flex:1; }
+.output-num{ font-size: 0.85rem; font-weight: 600; color: var(--rust-deep); }
+.output-body h3{ font-size: 1.2rem; line-height: 1.25; }
+.output-body p{ margin: 0; color: var(--ink-soft); font-family:'Fraunces',serif; font-size: 1rem; }
+.wrap .output-card img{ cursor: pointer; }
+</style>
 </head>
 <body>
 
 <header class="site-header">
     <div class="site-header-inner">
       <a class="brand" href="about-me.html"><span class="brand-logo"><img src="profile.jpg" alt="Emerson Jay Ricarte"></span><span class="brand-name">Emerson Jay Ricarte</span></a>
-      <nav class="site-nav"><ul><li class=""><a href="index.html">Home</a></li><li class=""><a href="digital-literacy-seminar.html">Digital Literacy Seminar</a></li><li class=""><a href="about-me.html">About me</a></li><li class="has-sub current"><a href="list-of-outputs.html">List of Outputs</a><ul class="sub-nav"><li class=""><a href="emerging-trends-and-innovations-in-it.html">Emerging Trends and Innovations in IT</a></li><li class=""><a href="cyber-security-and-ethical-issues.html">Cyber Security and Ethical Issues</a></li><li class=""><a href="data-analytics-and-artificial-intelligence.html">Data Analytics and Artificial Intelligence</a></li><li class=""><a href="cloud-computing-devops-and-modernization.html">Cloud Computing, DevOps, and Modernization</a></li><li class=""><a href="tech-entrepreneurship-and-startups-in-the-it-industry.html">Tech Entrepreneurship and Startups in the IT Industry</a></li></ul></li></ul></nav>
+      <nav class="site-nav"><ul><li class=""><a href="index.html">Home</a></li><li class=""><a href="future-ready-it-seminar.html">Future Ready IT Seminar</a></li><li class=""><a href="about-me.html">About me</a></li><li class="has-sub current"><a href="list-of-outputs.html">List of Outputs</a><ul class="sub-nav"><li class=""><a href="emerging-trends-and-innovations-in-it.html">Emerging Trends and Innovations in IT</a></li><li class=""><a href="cyber-security-and-ethical-issues.html">Cyber Security and Ethical Issues</a></li><li class=""><a href="data-analytics-and-artificial-intelligence.html">Data Analytics and Artificial Intelligence</a></li><li class=""><a href="cloud-computing-devops-and-modernization.html">Cloud Computing, DevOps, and Modernization</a></li><li class=""><a href="tech-entrepreneurship-and-startups-in-the-it-industry.html">Tech Entrepreneurship and Startups in the IT Industry</a></li></ul></li></ul></nav>
     </div>
   </header>
 
@@ -23,12 +35,29 @@
   <section class="page-header">
     <div class="eyebrow">Course Requirement</div>
     <h1>List of Outputs</h1>
-    <p class="subhead">Seminar proofs and narrative reports for each topic area covered in the course.</p>
+    <p class="subhead">Choose a topic to read the narrative report and see the seminar proof.</p>
   </section>
-  <section class="report">
-    <ul style="color:var(--ink-soft); padding-left: 20px;">
-      <li><a href="emerging-trends-and-innovations-in-it.html">Emerging Trends and Innovations in IT</a></li><li><a href="cyber-security-and-ethical-issues.html">Cyber Security and Ethical Issues</a></li><li><a href="data-analytics-and-artificial-intelligence.html">Data Analytics and Artificial Intelligence</a></li><li><a href="cloud-computing-devops-and-modernization.html">Cloud Computing, DevOps, and Modernization</a></li><li><a href="tech-entrepreneurship-and-startups-in-the-it-industry.html">Tech Entrepreneurship and Startups in the IT Industry</a></li>
-    </ul>
+  <section class="output-grid">
+      <a class="output-card" href="emerging-trends-and-innovations-in-it.html">
+        <div class="output-thumb"><img src="cert-multimedia-automation-ai.jpg" alt="Certificate of Participation — Multimedia Automation using AI"></div>
+        <div class="output-body"><span class="output-num">Output 1</span><h3>Emerging Trends and Innovations in IT</h3><p>Multimedia Automation using AI</p></div>
+      </a>
+      <a class="output-card" href="cyber-security-and-ethical-issues.html">
+        <div class="output-thumb"><img src="cert-beyond-connectivity-network-security-data-privacy-iot.jpg" alt="Certificate of Participation — Beyond Connectivity: Network Security and Data Privacy in IoT"></div>
+        <div class="output-body"><span class="output-num">Output 2</span><h3>Cyber Security and Ethical Issues</h3><p>Beyond Connectivity: Network Security and Data Privacy in IoT</p></div>
+      </a>
+      <a class="output-card" href="data-analytics-and-artificial-intelligence.html">
+        <div class="output-thumb"><img src="cert-smart-business-ai-data-analytics.jpg" alt="Certificate of Participation — Smart Business with AI and Data Analytics"></div>
+        <div class="output-body"><span class="output-num">Output 3</span><h3>Data Analytics and Artificial Intelligence</h3><p>Smart Business with AI and Data Analytics</p></div>
+      </a>
+      <a class="output-card" href="cloud-computing-devops-and-modernization.html">
+        <div class="output-thumb"><img src="cert-big-data-in-iot-managing-massive-connected-device-data.jpg" alt="Certificate of Participation — Big Data in IoT: Managing Massive Connected Device Data"></div>
+        <div class="output-body"><span class="output-num">Output 4</span><h3>Cloud Computing, DevOps, and Modernization</h3><p>Big Data in IoT: Managing Massive Connected Device Data</p></div>
+      </a>
+      <a class="output-card" href="tech-entrepreneurship-and-startups-in-the-it-industry.html">
+        <div class="output-thumb"><img src="cert-business-digital-transformation.jpg" alt="Certificate of Participation — Business 101: Intro to Business Digital Transformation"></div>
+        <div class="output-body"><span class="output-num">Output 5</span><h3>Tech Entrepreneurship and Startups in the IT Industry</h3><p>Business 101: Intro to Business Digital Transformation</p></div>
+      </a>
   </section>
 
   <footer>
